@@ -327,8 +327,8 @@ def process_batch(input_dir: Union[str, Path], output_dir: Union[str, Path], sav
 
 if __name__ == "__main__":
     
-    INPUT_DIRECTORY = Path("./data")     
-    OUTPUT_DIRECTORY = Path("./Si_PL")  
+    INPUT_DIRECTORY = Path("./sample_data/HF-Si-PL")
+    OUTPUT_DIRECTORY = Path("./Si_PL_output")
     
     # use_roi=True enables the ROI extraction process
     process_batch(
