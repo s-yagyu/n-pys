@@ -1,8 +1,8 @@
 # n-PYS: Data-Driven Variable-Exponent Analysis for Photoemission Yield Spectroscopy
 
-This repository contains the official Python implementation of the **1/n-Scan method** and the **Integrated Residual Diagnostics Framework** for Photoemission Yield Spectroscopy (PYS), as presented in our *Review of Scientific Instruments (RSI)* paper.
+This repository contains the official Python implementation of the **1/n-Scan method** and the **Integrated Residual Diagnostics Framework** for Photoemission Yield Spectroscopy (PYS) described in the associated paper (manuscript in preparation for journal submission).
 
-Our framework enables automated, data-driven materials discovery by systematically extracting physical phenomena from PYS data obtained in ambient environments without manual intervention. It overcomes the geometric biases of conventional logarithmic transformations and introduces a self-diagnostic system (using Akaike Weights, NMAE, RMR, Durbin-Watson statistic, and ΔR²) to distinguish between hardware-induced data degradation and physical model breakdowns (e.g., the overlap of surface defect and bulk scattered emissions).
+Our framework enables automated, data-driven materials discovery by systematically extracting physical phenomena from PYS data obtained in ambient environments without manual intervention. It overcomes the geometric biases of conventional logarithmic transformations and introduces a self-diagnostic system (using Akaike Weights, NMAE, RMR, Durbin-Watson statistic, and ΔR²) to distinguish between hardware-induced data degradation and physical model breakdowns (e.g., the overlap of two emission components with different thresholds).
 
 ## Features
 * **1/n-Scan Algorithm (`fitter.py`)**: A robust, variable-exponent fitting algorithm operating in the original signal space to prevent heteroscedasticity.
@@ -49,7 +49,7 @@ This parses one `.dat` file and runs the 1/n-Scan method on it directly, then re
 
 Below is an example of how to configure a script (placed next to the `npys/` folder) to process a continuous measurement dataset. This uses the bundled `sample_data/HF-Si-PL/` folder (the actual 60-times continuous measurement of the heavily doped p-type Si sample from Fig. 4b of the paper), but any folder of `.dat` files can be substituted.
 
-```
+```python
 from pathlib import Path
 from npys import batch_analyzer
 
@@ -79,13 +79,7 @@ python -m npys.batch_analyzer
 
 ## Data Availability
 
-The primary raw data underlying the paper's main results (10-times continuous Au measurement, and the 60-times continuous HF-treated Si measurements for all four doping types) is bundled directly in this repository under `sample_data/` — see Repository Structure above. This is the same raw data that will also be archived with a persistent DOI in the NIMS Materials Data Repository (MDR; https://mdr.nims.go.jp/) upon acceptance of the manuscript; the MDR deposit is the authoritative long-term archival copy, while the copy here is provided for immediate, no-download reproducibility of the code examples.
-
-## Citation
-
-If you use this code in your research, please cite our paper:
-
-**Shinjiro Yagyu, Takahiro Nagata, Yoshiyuki Nakajima.** "Data-Driven Variable-Exponent Analysis for Photoemission Yield Spectroscopy: An Autonomous Self-Diagnosing Framework Based on Integrated Residual Metrics." *Review of Scientific Instruments* (Submitted).
+The primary raw data underlying the paper's main results (10-times continuous Au measurement, and the 60-times continuous HF-treated Si measurements for all four doping types) is bundled directly in this repository under `sample_data/` — see Repository Structure above. The remaining data used in the paper, together with the data bundled here, will be archived with a persistent DOI in the NIMS Materials Data Repository (MDR; https://mdr.nims.go.jp/) upon publication; the MDR deposit is the authoritative long-term archival copy, while the copy here is provided for immediate, no-download reproducibility of the code examples.
 
 ## License
 
