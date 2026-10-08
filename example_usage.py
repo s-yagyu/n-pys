@@ -4,7 +4,7 @@ The 10 files in sample_data/Au/ are a real 10-times continuous PYS
 measurement of a polycrystalline rolled Au reference sample (RIKEN KEIKI
 AC-5, 4.0-6.2 eV, 0.05 eV step), used in the associated paper as the
 single-component benchmark (Section 4.2 / Supplementary S6). Running the
-batch analysis below should reproduce values close to: optimal n ~ 1.8-1.9,
+batch analysis below should reproduce values close to: mean optimal n ~ 1.84 (range 1.65-2.02),
 NMAE ~ 4.5%, RMR ~ 1.62, DW ~ 2.15, P*dn ~ 0.27.
 
 Run this script from the directory that contains the `npys/` folder:
